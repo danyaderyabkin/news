@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+title {
+  display: block;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+  h1 {
+    line-height: 1;
+  }
+
+  a {
+    text-decoration: none;
+    color: #0029FF;
+    font-weight: 700;
+  }
+
+  ul, li {
+    list-style: none;
+  }
+
+  .container {
+    max-width: 992px;
+    margin: 0 auto;
+  }
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  transition: .3s ease-out;
+  cursor: pointer;
+}
+
+header {
+  padding: 1rem;
+
+  .header__container {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .nav__btns {
+    display: flex;
+  }
+
+  .nav__btns button {
+    color: #C4C4C4;
+
+    &.active {
+      color: #0029FF;
+    }
+  }
+
+  .nav__btns button.currentList {
+    color: #0029FF;
+  }
+
+  .list-btn {
+    margin-right: .5rem;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem auto;
+
+    .header__wrap {
+      display: flex;
+      align-items: center;
+
+      button {
+        border-radius: 50%;
+        background-color: #fff;
+        box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.05);
+        width: 40px;
+        height: 40px;
+        margin-left: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.25rem;
+      min-width: 320px;
+      border-radius: 3px;
+      background: #FFF;
+      box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.05);
+
+      input {
+        border: none;
+        outline: none;
+      }
+    }
+
+    .nav__list {
+      display: flex;
+
+
+
+      li {
+        margin-right: 1rem;
+
+        button {
+          font-weight: 700;
+          color: #0029FF;
+
+          &.active {
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+}
+
+main {
+  .news__list {
+    display: flex;
+    flex-direction: column;
+
+    .news__item {
+      position: relative;
+      display: flex;
+      padding: 1.75rem 1.75rem 2.5rem;
+      border-radius: 3px;
+      background: #FFF;
+      box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+      margin-bottom: 2rem;
+
+      .news__image {
+        margin-right: 2rem;
+        display: flex;
+        flex-shrink: 0;
+        img {
+          width: 200px;
+          height: 100px;
+          object-fit: cover;
+        }
+      }
+
+      .news__text a {
+        display: flex;
+        margin-bottom: 1rem;
+      }
+
+      .news__src {
+        position: absolute;
+        bottom: 10px;
+        left: 1.75rem;
+
+        a {
+          color: #DCDCDC;
+          text-decoration: underline;
+        }
+      }
+
+      .news__date {
+        position: absolute;
+        bottom: 10px;
+        right: 1.75rem;
+        color: #DCDCDC;
+      }
+    }
+
+
+    &.grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+
+      .news__item {
+        margin-bottom: 0;
+        flex-direction: column;
+
+        img {
+          width: 100%;
+          height: auto;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
+.pagination {
+  padding: 1rem;
+
+  .pagination__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      margin: 0 .5rem;
+
+      a {
+        display: flex;
+        padding: .25rem;
+        color: #000;
+
+        &.active {
+          color: #0029FF;
+        }
+      }
+    }
+  }
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+  position: relative;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+  color: #666;
+  margin-left: .5rem;
+}
+
+[type="radio"]:checked + label svg {
+  color: #0029FF;
+}
+[type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
